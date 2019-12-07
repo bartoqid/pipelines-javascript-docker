@@ -19,7 +19,7 @@ steps:
     command: buildAndPush
     containerRegistry: DockerHub
     Dockerfile: app/Dockerfile
-    repository: demo/azurepipeline
+    repository: bartoq/azurepipeline
     tags: |
       $(Build.BuildId)
       latest
