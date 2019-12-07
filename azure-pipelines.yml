@@ -17,5 +17,10 @@ steps:
   displayName: Build an image
   inputs:
     repository: $(imageName)
-    command: build
+    command: buildAndPush
+    containerRegistry: dockerhub
     Dockerfile: app/Dockerfile
+    repository: demo/azurepipeline
+    tags: |
+      $(Build.BuildId)
+      latest
