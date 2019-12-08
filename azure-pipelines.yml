@@ -24,7 +24,7 @@ stages:
       displayName: Build an image
       inputs:
           command: buildAndPush
-          containerRegistry: DockerHub
+          containerRegistry: Dockerhub
           Dockerfile: app/Dockerfile
           repository: bartoq/azurepipeline
           tags: |
