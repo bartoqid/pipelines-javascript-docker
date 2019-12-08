@@ -24,7 +24,7 @@ stages:
       displayName: Build and Psuh
       inputs:
           command: buildAndPush
-          containerRegistry: Dockerhub
+          containerRegistry: 'Dockerhub'
           Dockerfile: **/app/Dockerfile
           repository: bartoq/azurepipeline
           tags: |
