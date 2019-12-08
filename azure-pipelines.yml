@@ -21,11 +21,11 @@ stages:
       vmImage: 'ubuntu-latest'
     steps:
     - task: Docker@2
-      displayName: Build an image
+      displayName: Build and Psuh
       inputs:
           command: buildAndPush
           containerRegistry: Dockerhub
-          Dockerfile: app/Dockerfile
+          Dockerfile: **/app/Dockerfile
           repository: bartoq/azurepipeline
           tags: |
             $(Build.BuildId)
