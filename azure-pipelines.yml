@@ -29,4 +29,4 @@ stages:
         repository: bartoq/azurepipeline
         tags: |
           $(Build.BuildId)
-           latest
+          latest
