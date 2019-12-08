@@ -47,8 +47,8 @@ stages:
       inputs:
         scanType: 'images'
         twistlockService: 'SC1'
-        vulnerabilityThreshold: 'high'
+        vulnerabilityThreshold: 'low'
         onlyFixed: false
         gracePeriod: '0'
-        complianceThreshold: 'high'
+        complianceThreshold: 'low'
         artifact: 'bartoq/azurepipeline'
