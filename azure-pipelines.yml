@@ -30,3 +30,25 @@ stages:
         tags: |
           $(Build.BuildId)
           latest
+    - task: UniversalPackages@0
+      inputs:
+        command: 'download'
+        downloadDirectory: '$(System.DefaultWorkingDirectory)'
+        feedsToUse: 'internal'
+        vstsFeed: 'd83dc3f1-0611-4db9-8308-bdaa525957cf'
+        vstsFeedPackage: '7f2ffd9a-c858-4dc1-94f8-f0b6a56b7a03'
+        vstsPackageVersion: '19.11.0'
+    - task: CmdLine@2
+      inputs:
+        script: |
+          sudo mv $(System.DefaultWorkingDirectory)/twistcli/ /usr/bin/twistcli
+          sudo chmod +x /usr/bin/twistcli
+    - task: twistcli-scan@1
+      inputs:
+        scanType: 'images'
+        twistlockService: 'SC1'
+        vulnerabilityThreshold: 'high'
+        onlyFixed: false
+        gracePeriod: '0'
+        complianceThreshold: 'high'
+        artifact: 'bartoq/azurepipeline'
